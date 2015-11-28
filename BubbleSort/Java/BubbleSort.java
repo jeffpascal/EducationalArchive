@@ -1,6 +1,6 @@
 public class BubbleSort
 {
-
+  //method that prints the array
   private static void print (double[] array)
   {
     for (int i=0 ; i<array.length ; i++)
@@ -8,6 +8,7 @@ public class BubbleSort
     System.out.println();
   }
 
+  //bubblesort method
   public static void BubbleSort (double[] array)
   {
     int length = array.length;
@@ -25,7 +26,6 @@ public class BubbleSort
   {
     double[] arrayToSort={2,3,1,2,3,0.2,-1,-15}; 
 
-
     //sorting ascending order
     BubbleSort(arrayToSort);
     print (arrayToSort);
@@ -42,6 +42,5 @@ public class BubbleSort
       arrayToSort[i] *= -1;
 
     print (arrayToSort);
-
   }
 }
