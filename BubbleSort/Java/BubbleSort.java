@@ -4,31 +4,44 @@ public class BubbleSort
   private static void print (double[] array)
   {
     for (int i=0 ; i<array.length ; i++)
-      System.out.println(array[i] + " ");
+      System.out.print(array[i] + " ");
+    System.out.println();
   }
-  private static void sortAscending (double[] array)
+
+  public static void BubbleSort (double[] array)
   {
-    int i,j;
     int length = array.length;
-    for (i=0 ; i<length ; i++)
-      for (j=i+1 ; j<=length ; j++);
-      {
-       if (array[i] < array[j])
+    for (int i=0 ; i<length-1 ; i++)
+      for (int j=i+1 ; j<length ; j++)
+       if (array[i] > array[j])
        {
          double swap = array[i];
          array[i]=array[j];
          array[j]=swap;
        }
-      }
-    print (array);
   }
 
   public static void main (String[] args)
   {
     double[] arrayToSort={2,3,1,2,3,0.2,-1,-15}; 
 
-    sortAscending(arrayToSort);
 
+    //sorting ascending order
+    BubbleSort(arrayToSort);
+    print (arrayToSort);
+
+    //reverse array
+    for (int i=0 ; i<arrayToSort.length ; i++)
+      arrayToSort[i] *= -1;
+    //sorting in descending order
+
+    BubbleSort(arrayToSort);
+
+    //reverse back
+    for (int i=0 ; i<arrayToSort.length ; i++)
+      arrayToSort[i] *= -1;
+
+    print (arrayToSort);
 
   }
 }
